@@ -20,21 +20,16 @@ Vue.component('navbar', {
 //footer
 Vue.component('footer-content', {
     template: `<footer class="地杆">
-                <div class="container">
-                    <span class="copyright">Copyright © <span id="footerYear">2020</span> <i class="iconfont icon-chiven-line"></i>人寻(Chiven Young) 保留所有权利.&emsp;&emsp;</span>
-                    <div class="footer-links">
-                        <a href="./copyright.html">版权声明</a><span class="split-line">|</span>&emsp;
-                        <a href="./agreement.html">使用协议</a><span class="split-line">|</span>&emsp;
-                        <a target="_blank" href="https://www.chiven.net/archives/yo-ho-scrawl-icons-comments.html">意见反馈</a><span class="split-line">|</span>&emsp;
-                        <a href="./about.html">关于《一函碎念》</a><span class="split-line">|</span>&emsp;
-                        <a target="_blank" href="https://www.chiven.net">作者网站</a>
-                    </div>
-                    <div class="beian">
-                        <a href="https://beian.miit.gov.cn/#/Integrated/index">豫ICP备2020027432号</a>
-                        <img src="https://www.chiven.net/img/batb.png">
-                        <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003271">粤公网安备44030702003271号</a>
-                        <span>联系邮箱：hi@chiven.net</span>
-                    </div>
+                <span class="copyright">Copyright © <span id="footerYear">2020</span> <i class="iconfont icon-chiven-line"></i>人寻(Chiven Young) 保留所有权利.&emsp;&emsp;</span>
+                <div class="footer-links">
+                    <a target="_blank" href="https://www.chiven.net/archives/yo-ho-scrawl-icons-comments.html">意见反馈</a><span class="split-line">|</span>&emsp;
+                    <a target="_blank" href="https://www.chiven.net">作者网站</a>
+                </div>
+                <div class="beian">
+                    <a href="https://beian.miit.gov.cn/#/Integrated/index">豫ICP备2020027432号</a>
+                    <img src="https://www.chiven.net/img/batb.png">
+                    <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003271">粤公网安备44030702003271号</a>
+                    <span>联系邮箱：hi@chiven.net</span>
                 </div>
             </footer>`
 })

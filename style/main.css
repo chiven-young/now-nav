@@ -94,6 +94,7 @@ p a {
     align-items: center;
     justify-content: space-between;
     height: 44px;
+    padding: 0 16px;
 }
 .nav-logo img{
     height: 24px;
@@ -175,10 +176,15 @@ p a {
 .画心 {
     height: 100vh;
 }
-.container {
-    max-width: 1024px;
-    margin: 0 auto;
-    padding: 0 16px;
+.page-container {
+    height: 100vh;
+    background-image: url('https://cdn.pixabay.com/photo/2021/12/24/17/14/nature-6891549_1280.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.main-container {
+    padding: 0 16px !important;
 }
 .section-title {
     font-size: 28px;
@@ -244,6 +250,12 @@ p a {
     .nav-list-container {
         grid-template-columns: repeat(auto-fill, 48%);
     }
+    .el-menu--collapse {
+        width: 0 !important;
+    }
+    .el-main {
+        width: 70%;
+    }
 }
 @media (max-width: 520px) {
     .nav-list-container {
@@ -268,7 +280,12 @@ p a {
 .nav-card-item:hover .open-dialog {
     display: block;
 }
-
+.el-drawer {
+    width: 268px !important;
+    background-color: rgb(255, 255, 255, 0.72) !important;
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+}
 
 /* 脚注 --------------------------*/
 .footnotes {
@@ -356,4 +373,8 @@ p a {
 }
 .card-detail table td i {
     margin-right: 8px;
+}
+
+.plugin-board .weather {
+    padding: 16px;
 }

@@ -13,7 +13,8 @@ var app = new Vue({
             navs: [],
             search: '',
             searchData: [],
-            isCollapse: false
+            isCollapse: false,
+            drawer: false,
         }
     },
     watch: {
