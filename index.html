@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8" />
+        <meta content="width=device-width,user-scalable=no" name="viewport">
+        <meta name="keywords" content="当下导航, 网址导航, 导航">
+        <meta name="description" content="网址导航">
+        <title>当下导航</title>
+        <link rel="stylesheet" href="./style/main.css" />
+        <link rel="stylesheet" href="//at.alicdn.com/t/font_2846982_m0ik62kqki8.css" />
+        <script src="./script/vue.min.js"></script>
+        <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+        <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <style>
+            #app .el-collapse-item__header, .el-collapse-item__wrap {
+                background-color: transparent !important;
+            }
+            .card-scroll::-webkit-scrollbar { 
+                width: 0 !important;
+            }
+            #app .el-carousel__indicators--horizontal {
+                bottom: 30px;
+                right: 0;
+                left: auto;
+            }
+            #app .el-carousel__button {
+                width: 4px;
+                height: 4px;
+                border-radius: 2px;
+            }
+            .card-detail .el-dialog__header {
+                display: none;
+            }
+            .card-detail .dialog-close {
+                position: absolute;
+                right: 20px;
+                top: 20px;
+                cursor: pointer;
+            }
+            .card-detail .el-dialog__body h1 {
+                color: #333;
+            }
+            .page-container {
+                height: 100vh;
+            }
+            .el-menu {
+                background-color: transparent;
+            }
+            .sidebar-menu {
+                border: none;
+                padding-top: 44px;
+                overflow-y: scroll;
+            }
+            .sidebar-menu:not(.el-menu--collapse) {
+                width: 240px;
+                min-height: 400px;
+            }
+            .el-main {
+                padding: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="画心" id="app">
+            <el-header class="天杆" height="44px">
+                <div class="nav-container container">
+                    <a class="nav-logo" href="./index.html">
+                        <img src="./assets/images/logo.png"/>
+                    </a>
+                    <div class="nav-main">
+                        <ul>
+                            <li><a href="/index.html">首页</a></li>
+                            <li><a target="_blank" href="https://www.chiven.net/">人寻</a></li>
+                            <li><a href="./pages/about.html">关于</a></li>
+                        </ul>
+                    </div>
+                    <a title="Github" class="nav-btn" target="_blank" href="https://gitee.com/chiven-young/Yo-ho-Scrawl-Icons"><i class="iconfont icon-github-fill"></i></a>
+                </div>
+            </el-header>
+            <el-container class="page-container">
+            <el-menu default-active="1-4-1" class="sidebar-menu" @open="handleOpen" @close="handleClose" :collapse="isCollapse">
+                <el-menu-item index="1">
+                    <i class="el-icon-position"></i>
+                    <span slot="title">开始</span>
+                </el-menu-item>
+                <el-submenu index="2">
+                    <template slot="title">
+                    <i class="el-icon-basketball"></i>
+                    <span slot="title"><a href="#nav-design">设计</a></span>
+                    </template>
+                    <el-menu-item index="2-1">热门</el-menu-item>
+                    <el-menu-item index="2-2">灵感</el-menu-item>
+                    <el-menu-item index="2-3">资讯</el-menu-item>
+                    <el-menu-item index="2-4">UI-UX</el-menu-item>
+                    <el-menu-item index="2-5">图标</el-menu-item>
+                    <el-menu-item index="2-6">图库</el-menu-item>
+                    <el-menu-item index="2-7">配色</el-menu-item>
+                    <el-menu-item index="2-8">字体</el-menu-item>
+                    <el-menu-item index="2-9">素材</el-menu-item>
+                    <el-menu-item index="2-10">规范</el-menu-item>
+                </el-submenu>
+                <el-submenu index="3">
+                    <template slot="title">
+                    <i class="el-icon-monitor"></i>
+                    <span slot="title"><a href="#nav-dev">开发</a></span>
+                    </template>
+                    <el-menu-item-group>
+                    <span slot="title">分组一</span>
+                    <el-menu-item index="3-1">选项1</el-menu-item>
+                    <el-menu-item index="3-2">选项2</el-menu-item>
+                    </el-menu-item-group>
+                    <el-menu-item-group title="分组2">
+                    <el-menu-item index="3-3">选项3</el-menu-item>
+                    </el-menu-item-group>
+                    <el-submenu index="3-4">
+                    <span slot="title">选项4</span>
+                    <el-menu-item index="3-4-1">选项1</el-menu-item>
+                    </el-submenu>
+                </el-submenu>
+                <el-menu-item index="4">
+                    <i class="el-icon-document"></i>
+                    <span slot="title">导航三</span>
+                </el-menu-item>
+                <el-menu-item index="5">
+                    <i class="el-icon-setting"></i>
+                    <span slot="title">导航四</span>
+                </el-menu-item>
+            </el-menu>
+            <el-main>
+            <div class="container">
+                <div style="height: 300px;"></div>
+                <el-radio-group v-model="isCollapse">
+                    <el-radio-button :label="false">展开</el-radio-button>
+                    <el-radio-button :label="true">收起</el-radio-button>
+                </el-radio-group>
+                <el-switch
+                    v-model="isCollapse"
+                    active-color="#13ce66"
+                    inactive-color="#ff4949">
+                </el-switch>
+            </div>
+            <div class="container" id="nav-design">
+                <div class="section-title">
+                    <span class="color-deep">更新了，</span><span class="color-shallow">看看这些新图标！<sup>1</sup></span>
+                </div>
+                <div class="nav-list-container">
+                    <div v-for="item in navs" class="nav-card-item">
+                        <img :src="item.imgUrl" class="card-nav-img">
+                        <div class="card-info">
+                            <div class="card-title" v-bind:title='item.name'>{{item.name}}</div>
+                            <div class="card-desc">{{item.desc}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="text-small"><i class="el-icon-warning-outline"></i> 对于已经上线的主题，请前往对应手机主题商城搜索获取主题。</div>
+                <br><br>
+                <footnotes-explain></footnotes-explain>
+            </div>
+            <download-dialog></download-dialog>
+            <footer-content></footer-content>
+            </el-main>
+            </el-container>
+        </div>
+        <script src="./script/components.js"></script>
+        <script src="./script/main.js"></script>
+    </body>
+</html>
