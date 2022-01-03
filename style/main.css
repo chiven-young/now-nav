@@ -197,7 +197,7 @@ p a {
     display: -ms-grid;
     display: -moz-grid;
     justify-content: space-between;
-    /* grid-gap: 10px; */
+    /* grid-gap: 4px; */
 }
 .nav-card-item {
     background-color: #fff;
@@ -206,54 +206,43 @@ p a {
     display: flex;
     display: -webkit-flex;
     align-items: center;
+    margin: 10px 0;
+    height: 90px;
 }
 .nav-card-item .card-info {
-    padding: 8px;
+    width: 60%;
 }
 .nav-card-item .card-nav-img {
-    width: 36px;
-    height: 36px;
-    border-radius: 18px;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
     margin: 8px 8px 8px 16px;
 }
 .nav-card-item .card-title {
-    font-size: 18px;
-    padding: 4px 0;
+    font-size: 16px;
+    padding: 4px 0 2px 0;
 }
 .nav-card-item .card-desc {
     font-size: 12px;
-    padding: 4px 0;
+    padding: 2px 0 4px 0;
     white-space: nowrap;
+    overflow: hidden;
     text-overflow:ellipsis;
     color: #333;
 }
 @media (min-width: 1024px) {
     .nav-list-container {
-        grid-template-columns: repeat(auto-fill, 22%);
-    }
-    .nav-card-item {
-        margin: 10px 0;
-        height: 100px;
+        grid-template-columns: repeat(auto-fill, 19%);
     }
 }
 @media (max-width:1024px) {
-    .card-content {
-        width: 360px;
-    }
     .nav-list-container {
         grid-template-columns: repeat(auto-fill, 32%);
-    }
-    .nav-card-item {
-        margin: 10px 0;
-        height: 100px;
     }
 }
 @media (max-width: 768px) {
     .nav-list-container {
-        grid-template-columns: repeat(auto-fill, 49%);
-    }
-    .nav-card-item {
-        margin: 8px 0;
+        grid-template-columns: repeat(auto-fill, 48%);
     }
 }
 @media (max-width: 520px) {
@@ -262,24 +251,13 @@ p a {
         margin-left: 0;
         margin-right: 0;
     }
-    .nav-card-item {
-        margin: 8px 0;
-        height: auto;
-    }
 }
 @media (max-width: 414px) {
-    .card-content {
-        width: 300px;
-    }
     .nav-main {
         display: none;
     }
 }
-@media (max-width: 375px) {
-    .card-content {
-        width: 260px;
-    }
-}
+
 .open-dialog {
     display: none;
     position: absolute;
